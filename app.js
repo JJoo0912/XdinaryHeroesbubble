@@ -219,5 +219,13 @@ document.addEventListener("DOMContentLoaded",()=>{
     initMember();
   }else if(path.endsWith("chat.html")){
     initChat();
+
+    // 여기에 exitButton 이벤트 추가
+    const exitBtn = document.getElementById('exitButton');
+    if(exitBtn){
+      exitBtn.addEventListener('click', () => {
+        window.location.href = 'index.html';  // index로 이동
+      });
+    }
   }
 });
