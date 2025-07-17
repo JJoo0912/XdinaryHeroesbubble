@@ -147,6 +147,24 @@ html,body {
   color: #ff5b5b;
 }
 
+.nav-back {
+  position: absolute;
+  top: 16px;         /* 기존 8px → chat.html과 동일하게 */
+  right: 16px;       /* 추가: 오른쪽 상단으로 보내기 */
+  background: none;
+  border: none;
+  font-size: 28px;   /* chat.html과 동일한 크기 */
+  line-height: 1;
+  color: #fff;       /* 어두운 배경일 경우 흰색이 잘 보임 */
+  z-index: 20;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-back:hover {
+  color: #ff5b5b;
+}
+
 .app-frame--profile {
   overflow:hidden;
 }
