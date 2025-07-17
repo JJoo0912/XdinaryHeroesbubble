@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <script defer src="app.js"></script>
+<script defer src="More.js"></script> <!-- More.js 연결 추가 -->
 </head>
 <body class="app-bg">
 <div id="app" class="app-frame">
@@ -13,10 +14,92 @@
     <h1 class="app-title">XdinaryHeroes bubble</h1>
   </header>
   <main id="archiveList" class="archive-list"></main>
+
+  <!-- More 버튼 및 토글 메뉴 추가 -->
+  <div class="more-container">
+    <button id="moreBtn" class="primary-btn">More</button>
+    <div id="moreMenu" class="more-menu hidden">
+      <button id="updateBtn" class="secondary-btn">Update</button>
+      <button id="managerBtn" class="secondary-btn">Manager</button>
+    </div>
+  </div>
+
   <nav class="app-tabbar">
     <button class="tab-btn tab-btn--active">Members</button>
+    <!-- 기존 disabled More 버튼 유지하려면 그대로 둬도 무방 -->
     <button class="tab-btn" disabled>More</button>
   </nav>
 </div>
+
+<!-- 문의 모달 -->
+<div id="inquiryModal" class="modal hidden">
+  <div class="modal-card">
+    <h3>문의하기</h3>
+    <label for="inquiryMember">멤버 선택:</label>
+    <select id="inquiryMember">
+      <option value="Gunil">Gunil</option>
+      <option value="Jeongsu">Jeongsu</option>
+      <option value="Gaon">Gaon</option>
+      <option value="Ode">Ode</option>
+      <option value="Junhan">Junhan</option>
+      <option value="Jooyeon">Jooyeon</option>
+    </select>
+    <label for="inquiryDate">날짜 선택:</label>
+    <input type="date" id="inquiryDate" />
+    <label for="inquiryText">문의 내용:</label>
+    <textarea id="inquiryText" rows="4"></textarea>
+    <div class="modal-actions">
+      <button id="sendInquiryBtn" class="primary-btn">전송</button>
+      <button id="closeInquiryBtn" class="secondary-btn">취소</button>
+    </div>
+  </div>
+</div>
+
+<!-- 관리자 로그인 모달 -->
+<div id="managerLoginModal" class="modal hidden">
+  <div class="modal-card">
+    <h3>관리자 로그인</h3>
+    <input type="password" id="managerPassword" placeholder="비밀번호 입력" />
+    <div class="modal-actions">
+      <button id="managerLoginBtn" class="primary-btn">로그인</button>
+      <button id="closeManagerLoginBtn" class="secondary-btn">취소</button>
+    </div>
+    <p id="managerLoginMsg" style="color:red; display:none; margin-top:10px;">비밀번호가 틀렸습니다.</p>
+  </div>
+</div>
+
+<!-- 관리자 페이지 모달 -->
+<div id="managerPageModal" class="modal hidden">
+  <div class="modal-card">
+    <h3>관리자 페이지</h3>
+    <button id="closeManagerPageBtn" class="secondary-btn" style="float:right;">닫기</button>
+    <div>
+      <h4>문의사항 목록</h4>
+      <ul id="inquiryList" style="max-height:200px; overflow-y:auto; border:1px solid #ccc; padding:8px;"></ul>
+    </div>
+    <div style="margin-top:20px;">
+      <h4>채팅 업로드</h4>
+      <label for="uploadMember">멤버 선택:</label>
+      <select id="uploadMember">
+        <option value="Gunil">Gunil</option>
+        <option value="Jeongsu">Jeongsu</option>
+        <option value="Gaon">Gaon</option>
+        <option value="Ode">Ode</option>
+        <option value="Junhan">Junhan</option>
+        <option value="Jooyeon">Jooyeon</option>
+      </select>
+      <label for="uploadDate">날짜/시간 선택:</label>
+      <input type="datetime-local" id="uploadDate" />
+      <label for="uploadText">텍스트 입력:</label>
+      <textarea id="uploadText" rows="3"></textarea>
+      <label for="uploadImage">이미지 업로드:</label>
+      <input type="file" id="uploadImage" accept="image/*" />
+      <div class="modal-actions" style="margin-top:10px;">
+        <button id="uploadBtn" class="primary-btn">업로드</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
