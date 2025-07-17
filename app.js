@@ -113,7 +113,28 @@ function initChat(){
   if(!getNickname()){
     openNickModal();
   }
+// 멤버 클릭 시 닉네임 체크 및 페이지 이동
+document.addEventListener("DOMContentLoaded", () => {
+  const members = document.querySelectorAll(".member");
 
+  members.forEach(member => {
+    member.addEventListener("click", () => {
+      const name = member.getAttribute("data-name");
+      let nickname = localStorage.getItem("nickname");
+
+      if (!nickname) {
+        nickname = prompt("닉네임을 설정하세요:");
+        if (nickname) {
+          localStorage.setItem("nickname", nickname);
+        } else {
+          return;
+        }
+      }
+
+      window.location.href = `chat.html?member=${name}`;
+    });
+  });
+});
   // load chat data
   loadChatData(id);
 }
