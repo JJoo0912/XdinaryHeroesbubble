@@ -24,29 +24,20 @@ function getNickname(){
 function setNickname(nick){
   localStorage.setItem("fanNickname", nick);
 }
-
-// Helper to map member id->display name
 function getMemberDisplay(id){
   const m = MEMBER_LIST.find(x=>x.id===id);
   return m ? m.display : id;
 }
-
-// Where images live
 function profileSrc(id){
   return `images/${id}_profile.jpg`;
 }
 function backgroundSrc(id){
   return `images/${id}_background.jpg`;
 }
-
-// Data path
 function dataSrc(id){
   return `data/${id}.json`;
 }
-
-// Date formatting util -> "YYYY-MM-DD" input -> readable
 function formatDateK(dateStr){
-  // naive
   const d = new Date(dateStr);
   if(!isNaN(d)){
     const y=d.getFullYear();
@@ -109,33 +100,12 @@ function initChat(){
   const titleEl=qs("#chatMemberName");
   if(titleEl) titleEl.textContent=disp;
 
-  // show nickname modal if not set
+  // ✅ 닉네임 없으면 모달 띄우기
   if(!getNickname()){
     openNickModal();
   }
-// 멤버 클릭 시 닉네임 체크 및 페이지 이동
-document.addEventListener("DOMContentLoaded", () => {
-  const members = document.querySelectorAll(".member");
 
-  members.forEach(member => {
-    member.addEventListener("click", () => {
-      const name = member.getAttribute("data-name");
-      let nickname = localStorage.getItem("nickname");
-
-      if (!nickname) {
-        nickname = prompt("닉네임을 설정하세요:");
-        if (nickname) {
-          localStorage.setItem("nickname", nickname);
-        } else {
-          return;
-        }
-      }
-
-      window.location.href = `chat.html?member=${name}`;
-    });
-  });
-});
-  // load chat data
+  // ✅ 채팅 데이터 불러오기
   loadChatData(id);
 }
 
@@ -159,7 +129,6 @@ function renderChat(box, data, memberId){
   const fanNick=getNickname() || "나";
   let lastDate=null;
   data.forEach(msg=>{
-    // date separator
     if(msg.date && msg.date!==lastDate){
       const sep=document.createElement("div");
       sep.className="chat-date-sep";
@@ -170,7 +139,6 @@ function renderChat(box, data, memberId){
 
     const who = msg.from === "artist" ? "artist" : "fan";
 
-    // image or text
     if (msg.image) {
       const img = document.createElement("img");
       img.src = msg.image;
@@ -185,7 +153,6 @@ function renderChat(box, data, memberId){
       box.appendChild(div);
     }
 
-    // meta (time + name)
     if(msg.time){
       const meta=document.createElement("div");
       meta.className="chat-meta";
@@ -195,7 +162,7 @@ function renderChat(box, data, memberId){
   });
 }
 
-// ---- nickname modal ----
+// ---- 닉네임 모달 ----
 function openNickModal(){
   const m=qs("#nickModal");
   if(m) m.classList.remove("hidden");
@@ -210,14 +177,13 @@ function saveNickname(){
   if(nick){
     setNickname(nick);
     closeNickModal();
-    // re-render chat to apply nickname
     if(currentMemberId){
       loadChatData(currentMemberId);
     }
   }
 }
 
-// ---- 이미지 팝업 및 저장 버튼 ----
+// ---- 이미지 팝업 ----
 function showImagePopup(src){
   const popup = document.createElement("div");
   popup.className = "img-popup";
@@ -231,7 +197,7 @@ function showImagePopup(src){
   document.body.appendChild(popup);
 }
 
-// ---- bootstrap by page ----
+// ---- 페이지 부트스트랩 ----
 document.addEventListener("DOMContentLoaded",()=>{
   const path=location.pathname;
   if(path.endsWith("index.html") || path.endsWith("/")){
@@ -241,11 +207,10 @@ document.addEventListener("DOMContentLoaded",()=>{
   }else if(path.endsWith("chat.html")){
     initChat();
 
-    // 여기에 exitButton 이벤트 추가
     const exitBtn = document.getElementById('exitButton');
     if(exitBtn){
       exitBtn.addEventListener('click', () => {
-        window.location.href = 'index.html';  // index로 이동
+        window.location.href = 'index.html';
       });
     }
   }
