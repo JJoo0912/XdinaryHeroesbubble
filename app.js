@@ -146,12 +146,24 @@ function renderChat(box, data, memberId){
       box.appendChild(sep);
       lastDate=msg.date;
     }
-    // message bubble
-    const div=document.createElement("div");
-    const who = msg.from==="artist" ? "artist" : "fan";
-    div.className=`chat-msg ${who}`;
-    div.textContent=msg.text;
-    box.appendChild(div);
+
+    const who = msg.from === "artist" ? "artist" : "fan";
+
+    // image or text
+    if (msg.image) {
+      const img = document.createElement("img");
+      img.src = msg.image;
+      img.className = "chat-img";
+      img.alt = "사진";
+      img.onclick = () => showImagePopup(img.src);
+      box.appendChild(img);
+    } else {
+      const div = document.createElement("div");
+      div.className = `chat-msg ${who}`;
+      div.textContent = msg.text.replace("(name)", fanNick);
+      box.appendChild(div);
+    }
+
     // meta (time + name)
     if(msg.time){
       const meta=document.createElement("div");
@@ -182,6 +194,20 @@ function saveNickname(){
       loadChatData(currentMemberId);
     }
   }
+}
+
+// ---- 이미지 팝업 및 저장 버튼 ----
+function showImagePopup(src){
+  const popup = document.createElement("div");
+  popup.className = "img-popup";
+  popup.innerHTML = `
+    <div class="img-popup-bg" onclick="this.parentNode.remove()"></div>
+    <div class="img-popup-content">
+      <img src="${src}" alt="채팅 이미지">
+      <a class="img-save-btn" href="${src}" download>이미지 저장</a>
+    </div>
+  `;
+  document.body.appendChild(popup);
 }
 
 // ---- bootstrap by page ----
