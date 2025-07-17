@@ -212,6 +212,14 @@ document.addEventListener("DOMContentLoaded",()=>{
       exitBtn.addEventListener('click', () => {
         window.location.href = 'index.html';
       });
+      // 탭바의 Members 버튼 클릭 시 멤버 리스트를 다시 렌더링
+document.getElementById("tabMembersBtn").addEventListener("click", () => {
+  const archiveList = document.getElementById("archiveList");
+  if (archiveList) {
+    archiveList.innerHTML = "";  // 기존 목록 제거
+    initArchive();               // 다시 멤버 출력
+  }
+});
     }
   }
 });
