@@ -295,8 +295,9 @@ html,body {
 .chat-meta {
   font-size:11px;
   color:var(--text-light);
-  margin-top:2px;
+  margin-top:4px;
   text-align:right;
+  display: block;
 }
 
 .chat-date-sep {
