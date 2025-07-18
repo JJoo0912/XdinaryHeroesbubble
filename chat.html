@@ -37,6 +37,13 @@
 
     <div id="chatScroll" class="chat-scroll"></div>
 
+    <!-- 이미지 팝업 (처음엔 숨김) -->
+<div id="imagePopup" class="popup hidden">
+  <button class="popup-close" onclick="closeImagePopup()">✕</button>
+  <img id="popupImage" class="popup-image" src="" alt="확대 이미지">
+  <a id="saveImageBtn" class="popup-save" download>💾 저장</a>
+</div>
+    
     <!-- nickname modal -->
     <div id="nickModal" class="modal hidden">
       <div class="modal-card">
