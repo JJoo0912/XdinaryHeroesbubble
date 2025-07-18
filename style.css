@@ -213,6 +213,14 @@ html,body {
   font-weight:700;
 }
 
+.chat-img {
+  display: block;
+  max-width: 60%;     /* 화면의 60%까지만 너비 허용 */
+  height: auto;       /* 비율 유지 */
+  border-radius: 12px; /* 둥근 모서리, 카톡 느낌 */
+  margin: 8px 0;      /* 위아래 여백 */
+  object-fit: contain;
+}
 .primary-btn {
   background:var(--accent);
   color:#fff;
