@@ -282,6 +282,12 @@
     "date": "2025-06-09"
   },
     {
+  "from": "artist",
+  "image": "bubble/Gunil_250609_2156.jpg",
+  "time": "21:56",
+  "date": "2025-06-09"
+},
+    {
     "from": "artist",
     "text": "깜빡하고 못보여줬던거 발견 ㅋㅋ",
     "time": "21:57",
@@ -306,6 +312,12 @@
     "date": "2025-06-10"
   },
       {
+  "from": "artist",
+  "image": "bubble/Gunil_250610_1433.jpg",
+  "time": "14:33",
+  "date": "2025-06-10"
+},
+      {
     "from": "artist",
     "text": "짠",
     "time": "14:33",
@@ -323,6 +335,12 @@
     "time": "14:35",
     "date": "2025-06-10"
   },
+      {
+  "from": "artist",
+  "image": "bubble/Gunil_250610_1437.jpg",
+  "time": "14:37",
+  "date": "2025-06-10"
+},
       {
     "from": "artist",
     "text": "이렇게 누룽지처럼 만들어쥬는게 포인트!",
@@ -436,7 +454,13 @@
     "text": "이 위에 드럼 걍 삘받는대로 치다가 멈리속에 편곡이 떠올라서 바로 해봤어",
     "time": "00:54",
     "date": "2025-06-12"
-  },          
+  },   
+      {
+  "from": "artist",
+  "image": "bubble/Gunil_250612_2000.jpg",
+  "time": "20:00",
+  "date": "2025-06-12"
+},
             {
     "from": "artist",
     "text": "하늘이 이쁘다",
@@ -472,7 +496,19 @@
     "text": "비가 엄청 쏟아지네 ㅜㅜ",
     "time": "11:02",
     "date": "2025-06-14"
-  },          
+  }, 
+      {
+  "from": "artist",
+  "image": "bubble/Gunil_250615_0011.jpg",
+  "time": "00:11",
+  "date": "2025-06-15"
+},
+      {
+  "from": "artist",
+  "image": "bubble/Gunil_250615_0012.jpg",
+  "time": "00:11",
+  "date": "2025-06-15"
+},
               {
     "from": "artist",
     "text": "짠",
@@ -514,7 +550,19 @@
     "text": "힘들힘들",
     "time": "23:13",
     "date": "2025-06-16"
-  },          
+  },  
+      {
+  "from": "artist",
+  "image": "bubble/Gunil_250616_2313.jpg",
+  "time": "23:13",
+  "date": "2025-06-16"
+},
+      {
+  "from": "artist",
+  "image": "bubble/Gunil_250616_2314.jpg",
+  "time": "23:13",
+  "date": "2025-06-16"
+},
          {
     "from": "artist",
     "text": "어제찍은 셀카!",
@@ -526,7 +574,19 @@
     "text": "어제 끝나고 다 같이 회먹었어 ㅎㅎ",
     "time": "23:15",
     "date": "2025-06-16"
-  },          
+  },   
+      {
+  "from": "artist",
+  "image": "bubble/Gunil_250616_2315.jpg",
+  "time": "23:15",
+  "date": "2025-06-16"
+},
+      {
+  "from": "artist",
+  "image": "bubble/Gunil_25016_2326.jpg",
+  "time": "23:26",
+  "date": "2025-06-16"
+},
          {
     "from": "artist",
     "text": "주연이와 형준이 ㅋㅋ",
@@ -592,13 +652,31 @@
     "text": "어제두 새벽까지 녹음하구 지금 일어나써",
     "time": "13:28",
     "date": "2025-06-21"
-  },          
+  },  
+      {
+  "from": "artist",
+  "image": "bubble/Gunil_250621_1329.jpg",
+  "time": "13:29",
+  "date": "2025-06-21"
+},
           {
     "from": "artist",
     "text": "오랜만에 물집 제대로 잡혓다 ㅋㅋㅋ",
     "time": "13:29",
     "date": "2025-06-21"
   },          
+      {
+  "from": "artist",
+  "image": "bubble/Gunil_250622_1742.jpg",
+  "time": "17:42",
+  "date": "2025-06-22"
+},
+      {
+  "from": "artist",
+  "image": "bubble/Gunil_250622_1743.jpg",
+  "time": "17:42",
+  "date": "2025-06-22"
+},
           {
     "from": "artist",
     "text": "야구 경기 보는중!!!!",
@@ -622,7 +700,13 @@
     "text": "그래도 재밌었어 ㅎㅎ",
     "time": "18:00",
     "date": "2025-06-22"
-  },          
+  },   
+      {
+  "from": "artist",
+  "image": "bubble/Gunil_250623_1208.jpg",
+  "time": "12:08",
+  "date": "2025-06-23"
+},
             {
     "from": "artist",
     "text": "오랜만에 회사밥 먹는당 ㅋㅋ",
