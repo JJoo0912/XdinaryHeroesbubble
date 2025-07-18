@@ -401,12 +401,7 @@ html,body {
 .modal-card h3, .modal-card h4 {
   margin-top: 0;
 }
-.chat-video {
-  border-radius: 8px;
-  margin: 8px 0;
-  max-width: 100%;
-  height: auto;
-}
+
 .modal-actions {
   margin-top: 16px;
   display: flex;
