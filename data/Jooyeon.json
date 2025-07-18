@@ -12,6 +12,12 @@
     "date": "2025-06-10"
   },
   {
+  "from": "artist",
+  "image": "bubble/Jooyeon_250615_2150.jpg",
+  "time": "21:50",
+  "date": "2025-06-15"
+},
+  {
     "from": "artist",
     "text": "우린 이렇게 보임ㅋㅋㅋㅋ",
     "time": "21:50",
@@ -77,6 +83,12 @@
     "time": "22:10",
     "date": "2025-07-06"
   },
+  {
+  "from": "artist",
+  "image": "bubble/Jooyeon_250717_1900",
+  "time": "19:00",
+  "date": "2025-07-17"
+},
   {
     "from": "artist",
     "text": "나. 김치. 먹는다.",
