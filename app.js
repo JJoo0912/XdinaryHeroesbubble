@@ -140,25 +140,43 @@ function renderChat(box, data, memberId){
     const who = msg.from === "artist" ? "artist" : "fan";
 
     if (msg.image) {
-      const img = document.createElement("img");
-      img.src = msg.image;
-      img.className = "chat-img";
-      img.alt = "사진";
-      img.onclick = () => showImagePopup(img.src);
-      box.appendChild(img);
-    } else {
-      const div = document.createElement("div");
-      div.className = `chat-msg ${who}`;
-      div.textContent = msg.text.replace("(name)", fanNick);
-      box.appendChild(div);
-    }
+  const div = document.createElement("div");
+  div.className = `chat-msg ${who}`;
 
-    if(msg.time){
-      const meta=document.createElement("div");
-      meta.className="chat-meta";
-      meta.textContent = (who==="fan"?fanNick:getMemberDisplay(memberId)) + " · " + msg.time;
-      box.appendChild(meta);
-    }
+  const img = document.createElement("img");
+  img.src = msg.image;
+  img.className = "chat-img";
+  img.alt = "사진";
+  img.onclick = () => showImagePopup(img.src);
+  div.appendChild(img);
+
+  if (msg.time) {
+    const meta = document.createElement("div");
+    meta.className = "chat-meta";
+    meta.textContent = (who === "fan" ? fanNick : getMemberDisplay(memberId)) + " · " + msg.time;
+    div.appendChild(meta);
+  }
+
+  box.appendChild(div);
+      
+} else {
+  const div = document.createElement("div");
+  div.className = `chat-msg ${who}`;
+  
+  // 채팅 텍스트
+  const msgText = document.createTextNode(msg.text.replace("(name)", fanNick));
+  div.appendChild(msgText);
+
+  // 시간 + 이름 메타 정보
+  if (msg.time) {
+    const meta = document.createElement("div");
+    meta.className = "chat-meta";
+    meta.textContent = (who === "fan" ? fanNick : getMemberDisplay(memberId)) + " · " + msg.time;
+    div.appendChild(meta);  // 👈 말풍선(div) 안에 append!!
+  }
+
+  box.appendChild(div);
+}
   });
 }
 
