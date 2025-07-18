@@ -146,16 +146,6 @@ function renderChat(box, data, memberId){
       img.alt = "사진";
       img.onclick = () => showImagePopup(img.src);
       box.appendChild(img);
-
-    } else if (msg.video) {
-      const video = document.createElement("video");
-      video.src = msg.video;
-      video.className = "chat-video";
-      video.controls = true;
-      video.preload = "metadata";
-      video.style.maxWidth = "100%";
-      box.appendChild(video);
-
     } else {
       const div = document.createElement("div");
       div.className = `chat-msg ${who}`;
@@ -223,13 +213,13 @@ document.addEventListener("DOMContentLoaded",()=>{
         window.location.href = 'index.html';
       });
       // 탭바의 Members 버튼 클릭 시 멤버 리스트를 다시 렌더링
-      document.getElementById("tabMembersBtn").addEventListener("click", () => {
-        const archiveList = document.getElementById("archiveList");
-        if (archiveList) {
-          archiveList.innerHTML = "";  // 기존 목록 제거
-          initArchive();               // 다시 멤버 출력
-        }
-      });
+document.getElementById("tabMembersBtn").addEventListener("click", () => {
+  const archiveList = document.getElementById("archiveList");
+  if (archiveList) {
+    archiveList.innerHTML = "";  // 기존 목록 제거
+    initArchive();               // 다시 멤버 출력
+  }
+});
     }
   }
 });
